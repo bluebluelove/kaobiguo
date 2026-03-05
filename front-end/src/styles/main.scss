@@ -1,0 +1,82 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --kb-primary: #2563eb;
+  --kb-primary-dark: #1d4ed8;
+  --kb-primary-light: #3b82f6;
+  --kb-accent: #06b6d4;
+  --kb-gradient-start: #2563eb;
+  --kb-gradient-end: #7c3aed;
+  --kb-glass: rgba(255, 255, 255, 0.85);
+  --kb-glass-border: rgba(255, 255, 255, 0.95);
+  --kb-shadow: 0 8px 32px rgba(37, 99, 235, 0.12);
+  --kb-shadow-lg: 0 20px 50px rgba(37, 99, 235, 0.15);
+  --kb-text: #1e293b;
+  --kb-text-muted: #64748b;
+  --kb-radius: 16px;
+  --kb-radius-sm: 12px;
+  --kb-nav-height: 64px;
+  /* 移动端安全区，避免内容与刘海/手势条/系统悬浮按钮重叠导致「UI 漂起来」 */
+  --kb-safe-top: env(safe-area-inset-top, 0px);
+  --kb-safe-right: env(safe-area-inset-right, 0px);
+  --kb-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --kb-safe-left: env(safe-area-inset-left, 0px);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  color: var(--kb-text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 各路由页面共用：最大宽度 + 居中；底部预留安全区，避免被系统导航/悬浮按钮挡住 */
+.page-view {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  padding-left: max(1rem, var(--kb-safe-left));
+  padding-right: max(1rem, var(--kb-safe-right));
+  padding-bottom: max(1.5rem, var(--kb-safe-bottom));
+}
+
+/* 玻璃卡片通用 */
+.glass-card {
+  background: var(--kb-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--kb-glass-border);
+  border-radius: var(--kb-radius);
+  box-shadow: var(--kb-shadow);
+  padding: 1.5rem;
+  transition: box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.glass-card:hover {
+  box-shadow: var(--kb-shadow-lg);
+}
+
+.glass-card-header {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--kb-text);
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}

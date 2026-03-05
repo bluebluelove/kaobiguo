@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+
+# Build / output
+dist/
+dist-ssr/
+*.local
+
+# Environment（不要提交敏感信息）
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor / OS（含子目录下的 .cursor，如 back-end/.cursor、front-end/.cursor）
+**/.cursor/
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.DS_Store
+Thumbs.db
+
+# Docs（不提交到仓库）
+**/doc/
+
+# Optional
+.pnp
+.pnp.js
